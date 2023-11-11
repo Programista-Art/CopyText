@@ -58,6 +58,7 @@
         <UWP_DelphiLogo44>$(BDS)\bin\Artwork\Windows\UWP\delphi_UwpDefault_44.png</UWP_DelphiLogo44>
         <UWP_DelphiLogo150>$(BDS)\bin\Artwork\Windows\UWP\delphi_UwpDefault_150.png</UWP_DelphiLogo150>
         <SanitizedProjectName>copyText</SanitizedProjectName>
+        <Custom_Styles>Carbon|VCLSTYLE|$(BDSCOMMONDIR)\Styles\Carbon.vsf</Custom_Styles>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_Win32)'!=''">
         <DCC_UsePackage>soapserver;frxDB28;LightLog;IndySystem;vclwinx;fmx;Package1;vclie;DbxCommonDriver;bindengine;vcldb;IndyIPCommon;VCLRESTComponents;FireDACCommonODBC;frxIntIOIndy28;FireDACCommonDriver;appanalytics;IndyProtocols;vclx;frxe28;IndyIPClient;dbxcds;vcledge;vclFireDAC;fs28;bindcompvclwinx;bindcomp;FmxTeeUI;FireDACCommon;frxTee28;IWBootstrap4D11;IndyCore;RESTBackendComponents;bindcompfmx;fsTee28;bindcompdbx;fsDB28;inetdb;frxHTML28;rtl;FireDACMySQLDriver;frxADO28;FireDACSqliteDriver;DbxClientDriver;FireDACADSDriver;Tee;RESTComponents;DBXSqliteDriver;vcl;vclactnband;TeeUI;IndyIPServer;fmxFireDAC;dbexpress;dsnapxml;dsnapcon;soapmidas;adortl;frxIntIO28;DBXMySQLDriver;frxDBX28;Intraweb_15_D11;VclSmp;inet;frxcs28;acntDX11Alexandria_R;AlphaDBDX11Alexandria;vclimg;vcltouch;FireDACPgDriver;FireDAC;fmxase;inetdbxpress;xmlrtl;tethering;frx28;dbrtl;frxPDF28;LightCore;bindcompvcl;dsnap;fmxdae;TeeDB;fsADO28;CloudService;FireDACMSAccDriver;CustomIPTransport;IWBootstrapD11;fmxobj;bindcompvclsmp;FMXTee;soaprtl;vcldsnap;DBXInterBaseDriver;FireDACIBDriver;$(DCC_UsePackage)</DCC_UsePackage>
@@ -84,6 +85,12 @@
     <PropertyGroup Condition="'$(Cfg_1_Win32)'!=''">
         <DCC_RemoteDebug>false</DCC_RemoteDebug>
         <AppDPIAwarenessMode>PerMonitorV2</AppDPIAwarenessMode>
+        <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
+        <VerInfo_Debug>true</VerInfo_Debug>
+        <VerInfo_Special>true</VerInfo_Special>
+        <VerInfo_Private>true</VerInfo_Private>
+        <VerInfo_Locale>1033</VerInfo_Locale>
+        <VerInfo_Keys>CompanyName=CopyText;FileDescription=$(MSBuildProjectName);FileVersion=1.0.0.0;InternalName=CopyText;LegalCopyright=CopyText;LegalTrademarks=CopyText;OriginalFilename=CopyText;ProgramID=com.embarcadero.$(MSBuildProjectName);ProductName=$(MSBuildProjectName);ProductVersion=1.0.0.0;Comments=;PrivateBuild=;SpecialBuild=</VerInfo_Keys>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_2)'!=''">
         <DCC_LocalDebugSymbols>false</DCC_LocalDebugSymbols>
@@ -100,6 +107,10 @@
         </DelphiCompile>
         <DCCReference Include="main.pas">
             <Form>Form1</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="Uabout.pas">
+            <Form>fAbout</Form>
             <FormType>dfm</FormType>
         </DCCReference>
         <BuildConfiguration Include="Base">
@@ -122,6 +133,12 @@
                 <Source>
                     <Source Name="MainSource">copyText.dpr</Source>
                 </Source>
+                <Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\dcloffice2k280.bpl">Microsoft Office 2000 Sample Automation Server Wrapper Components</Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\dclofficexp280.bpl">Microsoft Office XP Sample Automation Server Wrapper Components</Excluded_Packages>
+                    <Excluded_Packages Name="E:\Programy zainstalowane\Delphi 11\FastReport VCL Trial\LibD28\dclfrxIBX28.bpl">FastReport VCL IBX Components</Excluded_Packages>
+                    <Excluded_Packages Name="E:\Programy zainstalowane\Delphi 11\FastReport VCL Trial\LibD28\dclfsIBX28.bpl">FastScript 1.9 IBX Components</Excluded_Packages>
+                </Excluded_Packages>
             </Delphi.Personality>
             <Deployment Version="4">
                 <DeployFile LocalName="Win32\Debug\copyText.exe" Configuration="Debug" Class="ProjectOutput">

@@ -1,11 +1,11 @@
-unit main;
+﻿unit main;
 
 interface
 
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, System.ImageList, Vcl.ImgList,
-  Vcl.Buttons, Vcl.StdCtrls, Vcl.ExtCtrls;
+  Vcl.Buttons, Vcl.StdCtrls, Vcl.ExtCtrls, Vcl.Menus, VersInfo;
 
 type
   TForm1 = class(TForm)
@@ -24,6 +24,11 @@ type
     pnl1: TPanel;
     Label1: TLabel;
     btn3: TSpeedButton;
+    MainMenu1: TMainMenu;
+    mniI1: TMenuItem;
+    mniS1: TMenuItem;
+    mniA1: TMenuItem;
+    smvrsnf1: TSMVersionInfo;
     procedure edt1Click(Sender: TObject);
     procedure edt2Click(Sender: TObject);
     procedure edt3Click(Sender: TObject);
@@ -35,6 +40,8 @@ type
     procedure edt9Click(Sender: TObject);
     procedure edt10Click(Sender: TObject);
     procedure btn3Click(Sender: TObject);
+    procedure mniA1Click(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
   private
     { Private declarations }
      procedure CopyText(const textControl: TCustomEdit; const statusText: string);
@@ -47,14 +54,17 @@ var
 
 implementation
 
+uses
+  Uabout;
+
 {$R *.dfm}
 
 { TForm1 }
 
 procedure TForm1.btn3Click(Sender: TObject);
 begin
-case Application.MessageBox('Czy napewno usunąć dane ze wszystkich pól ?',
-  'Powiadomienie', MB_OKCANCEL + MB_ICONWARNING + MB_DEFBUTTON2 + MB_TOPMOST)
+case Application.MessageBox('Are you sure you want to delete data from all fields? ',
+  'Notification', MB_OKCANCEL + MB_ICONWARNING + MB_DEFBUTTON2 + MB_TOPMOST)
   of
   IDOK:
     begin
@@ -92,52 +102,63 @@ end;
 
 procedure TForm1.edt10Click(Sender: TObject);
 begin
-  CopyText(edt10,'Skopiowane');
+  CopyText(edt10,'Copied');
 end;
 
 procedure TForm1.edt1Click(Sender: TObject);
 begin
-  CopyText(edt1,'Skopiowane');
+  CopyText(edt1,'Copied');
 end;
 
 procedure TForm1.edt2Click(Sender: TObject);
 begin
-   CopyText(edt2,'Skopiowane');
+   CopyText(edt2,'Copied');
 end;
 
 procedure TForm1.edt3Click(Sender: TObject);
 begin
-  CopyText(edt3,'Skopiowane');
+  CopyText(edt3,'Copied');
 end;
 
 procedure TForm1.edt4Click(Sender: TObject);
 begin
-  CopyText(edt4,'Skopiowane');
+  CopyText(edt4,'Copied');
 end;
 
 procedure TForm1.edt5Click(Sender: TObject);
 begin
-  CopyText(edt5,'Skopiowane');
+  CopyText(edt5,'Copied');
 end;
 
 procedure TForm1.edt6Click(Sender: TObject);
 begin
-  CopyText(edt6,'Skopiowane');
+  CopyText(edt6,'Copied');
 end;
 
 procedure TForm1.edt7Click(Sender: TObject);
 begin
-  CopyText(edt7,'Skopiowane');
+  CopyText(edt7,'Copied');
 end;
 
 procedure TForm1.edt8Click(Sender: TObject);
 begin
-  CopyText(edt8,'Skopiowane');
+  CopyText(edt8,'Copied');
 end;
 
 procedure TForm1.edt9Click(Sender: TObject);
 begin
-  CopyText(edt9,'Skopiowane');
+  CopyText(edt9,'Copied');
+end;
+
+procedure TForm1.FormCreate(Sender: TObject);
+ begin
+  Form1.Caption := 'CopyText V ' + smvrsnf1.FileVersion;
+end;
+
+procedure TForm1.mniA1Click(Sender: TObject);
+begin
+  Form1.FormStyle := fsNormal;
+  fAbout.ShowModal;
 end;
 
 end.

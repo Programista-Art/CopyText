@@ -1,9 +1,9 @@
 object Form1: TForm1
   Left = 0
   Top = 0
-  BorderIcons = [biSystemMenu, biMinimize]
+  BorderIcons = [biSystemMenu]
   BorderStyle = bsSingle
-  Caption = 'Kopiowacz'
+  Caption = 'CopyText'
   ClientHeight = 343
   ClientWidth = 216
   Color = clBtnFace
@@ -12,7 +12,10 @@ object Form1: TForm1
   Font.Height = -12
   Font.Name = 'Segoe UI'
   Font.Style = []
+  FormStyle = fsStayOnTop
+  Menu = MainMenu1
   Position = poMainFormCenter
+  OnCreate = FormCreate
   TextHeight = 15
   object pnl2: TPanel
     Left = 0
@@ -21,7 +24,8 @@ object Form1: TForm1
     Height = 316
     Align = alClient
     TabOrder = 0
-    ExplicitWidth = 217
+    ExplicitWidth = 210
+    ExplicitHeight = 310
     object edt1: TEdit
       Left = 8
       Top = 16
@@ -110,15 +114,19 @@ object Form1: TForm1
     Height = 27
     Align = alBottom
     TabOrder = 1
-    ExplicitTop = 432
-    ExplicitWidth = 298
+    ExplicitTop = 310
+    ExplicitWidth = 210
     object Label1: TLabel
-      Left = 0
+      AlignWithMargins = True
+      Left = 6
       Top = 6
-      Width = 113
-      Height = 19
-      Align = alCustom
-      Caption = 'Label1'
+      Width = 3
+      Height = 15
+      Margins.Left = 5
+      Margins.Top = 5
+      Margins.Right = 5
+      Margins.Bottom = 5
+      Align = alLeft
     end
     object btn3: TSpeedButton
       Left = 134
@@ -126,7 +134,7 @@ object Form1: TForm1
       Width = 81
       Height = 25
       Align = alRight
-      Caption = 'Usu'#324
+      Caption = 'Clear'
       ImageIndex = 0
       Images = il1
       OnClick = btn3Click
@@ -137,7 +145,7 @@ object Form1: TForm1
     Left = 96
     Top = 248
     Bitmap = {
-      494C010101000800040010001000FFFFFFFFFF00FFFFFFFFFFFFFFFF424D3600
+      494C010101000800040010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000400000001000000001002000000000000010
       000000000000000000000000000000000000000000FF000000FF000000FF0000
       00FF000000FF000000FF000000FF000000FF000000FF000000FF000000FF0000
@@ -273,6 +281,26 @@ object Form1: TForm1
       FFFF000000000000F00F000000000000E07F000000000000E03F000000000000
       E09F000000000000E1CF000000000000F3E7000000000000F9F7000000000000
       FCE7000000000000FE4F000000000000FF1F000000000000FFFF000000000000
-      FFFF000000000000FFFF000000000000}
+      FFFF000000000000FFFF00000000000000000000000000000000000000000000
+      000000000000}
+  end
+  object MainMenu1: TMainMenu
+    Left = 168
+    Top = 96
+    object mniS1: TMenuItem
+      Caption = 'Settings'
+    end
+    object mniI1: TMenuItem
+      Caption = 'Info'
+      object mniA1: TMenuItem
+        Caption = 'About a program'
+        OnClick = mniA1Click
+      end
+    end
+  end
+  object smvrsnf1: TSMVersionInfo
+    FileName = 'copyText.exe'
+    Left = 152
+    Top = 192
   end
 end
