@@ -3,8 +3,7 @@
 ### The program allows you to easily copy text from text fields.
 ### You need to compile the program in Delphi 11, then the Win32/Debug folder will appear, and the working program will be there.
 ### UI Appearance
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/Vc4MyaM9v1Q?si=Tw1rebmXe77GJVFY" allowfullscreen></iframe>
+Video https://www.youtube.com/watch?v=Vc4MyaM9v1Q
 
 ![Image CopyText](/img/CopyText2.jpg "View of the Main program window")
 ![Image CopyText](/img/CopyText1.jpg "Copied text")
